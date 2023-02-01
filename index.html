@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>js project</title>
+</head>
+<body class="m-0 p-0 h-[100vh] w-[100vw]">
+    <section>
+        <nav class="w-[100vw] h-[10vh] bg-yellow-200 capitalize text-base">
+            <ul class="flex text-center p-5">
+                <li class="mx-5"><a href="#">home</a></li>
+                <li class="mx-5"><a href="#">about</a></li>
+                <li class="mx-5"><a href="#">contect</a></li>
+            </ul>
+        </nav>
+        <section class="main m-auto flex flex-col justify-center items-center bg-red-500 ">
+            <h1 class="text-3xl font-serif capitalize m-2 ">todo list</h1>
+            <input type="text" id="title" class=" p-2 border border-black w-1/2 rounded-sm my-5" placeholder="enter your text hear!">
+        <input type="text" id="desc" class=" p-2 border border-black w-1/2 rounded-sm my-5" placeholder="write your description hear!">
+        <section class="flex justify-center items-center ">
+        <button type="button" id="submit" class="p-3 m-2 border border-black rounded-sm bg-blue-500  ">submite</button>
+        <button type="button" id="deleteBtn" class="p-3 m-2 border border-black rounded-sm  bg-blue-500 ">delete</button>
+    </section>
+    </section>
+
+    <span id="todo" class="">
+
+    </span>
+    <script>
+      submit.addEventListener("click", (e) => {
+    e.preventDefault()
+    let titlec = title.value
+    let descc = desc.value
+    localStorage.setItem('todo', JSON.stringify([titlec, descc]))
+    console.log(e)
+    todo.innerHTML = `
+    <h1>${titlec} </h1>
+    <p> ${descc}</p>
+    `
+    title.value = ""
+    desc.value = ""
+})
+// deleteBtn.addEventListener("click", (e) => {
+//     e.preventDefault()
+//     localStorage.removeItem("todo")
+//     todo.innerHTML = ""
+//   })
+    </script>
+</body>
+</html>
+
+<!-- 
+submit.addEventListener("click", (e) => {
+    e.preventDefault()
+    let titlec = title.value
+    let descc = desc.value
+    localStorage.setItem("todo", JSON.stringify([titlec, descc]))
+    console.log(e)
+    todo.innerHTML = `
+    <h1>${titlec} </h1>
+    <p> ${descc}</p>
+    `
+    title.value = ""
+    desc.value = ""
+  })
+  
+  deleteBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    localStorage.removeItem("todo")
+    todo.innerHTML = ""
+  }) -->
